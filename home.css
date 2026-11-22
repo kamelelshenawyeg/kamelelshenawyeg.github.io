@@ -116,3 +116,4 @@
 
 /* Soften logo crops that touch the source image edge */
 .km-plate img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
+@media(max-width:860px){.km-cta{padding:34px 20px}.km-footer-contact a{padding:14px 18px}.km-footer-contact a:last-child strong{font-size:clamp(14px,4.7vw,24px);white-space:nowrap}}
