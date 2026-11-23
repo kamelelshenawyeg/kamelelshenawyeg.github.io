@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Highlights — Kamel Elshenawy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#0d0c09;color:#f5f1e6;font-family:Georgia,'Times New Roman',serif;overscroll-behavior:none}
+.bar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;background:linear-gradient(rgb(13 12 9/.85),transparent)}
+.bar .t{font-size:17px;letter-spacing:.06em}
+.pill{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:12.5px;line-height:1;padding:.55rem .85rem;border-radius:999px;border:1px solid rgb(245 241 230/.45);background:rgb(20 19 15/.72);color:#f5f1e6;cursor:pointer}
+.pill svg{width:15px;height:15px}
+.feed{height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.reel{position:relative;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#0d0c09}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel video[data-fit="contain"]{object-fit:contain}
+.ctl{position:absolute;right:12px;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgb(245 241 230/.4);background:rgb(20 19 15/.72);color:#f5f1e6;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sound{top:calc(64px + env(safe-area-inset-top))}
+.expand{top:calc(118px + env(safe-area-inset-top));font-size:15px}
+.glyph{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgb(20 19 15/.72);color:#f5f1e6;display:none;align-items:center;justify-content:center;font-size:22px;pointer-events:none}
+.reel.is-paused .glyph{display:flex}
+.scrim{position:fixed;inset:0;z-index:30;background:rgb(20 19 15/.45);opacity:0;transition:opacity .22s ease;pointer-events:none}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:31;width:min(340px,86vw);background:#f5f1e6;color:#181713;transform:translateX(102%);transition:transform .24s ease;display:flex;flex-direction:column}
+.drawer.on{transform:translateX(0)}
+.dbar{display:flex;align-items:center;justify-content:space-between;padding:calc(.9rem + env(safe-area-inset-top)) 1rem .9rem;border-bottom:1px solid rgb(24 23 19/.2);font-size:19px}
+.dbar button{font:inherit;font-size:22px;line-height:1;border:1px solid currentColor;border-radius:999px;width:34px;height:34px;background:transparent;color:inherit;cursor:pointer}
+.dlist{overflow-y:auto;display:flex;flex-direction:column}
+.ditem{display:flex;gap:.7rem;align-items:center;text-align:left;font:inherit;background:transparent;border:0;border-bottom:1px solid rgb(24 23 19/.14);padding:.7rem .9rem;cursor:pointer;color:inherit}
+.ditem img{width:64px;height:64px;object-fit:cover;border-radius:8px;background:#14130f}
+.ditem[aria-current="true"]{background:rgb(24 23 19/.07)}
+.ditem b{display:block;font-size:13.5px}
+.ditem span span{display:block;font-size:11.5px;color:#6b6656;margin-top:2px}
+</style></head><body>
+<div class="bar"><span class="t">Highlights</span>
+<button class="pill" id="pl" type="button" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Playlist</button></div>
+<div class="feed" id="feed"></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Playlist"><div class="dbar"><span>Playlist</span><button id="dclose" type="button" aria-label="Close playlist">&times;</button></div>
+<div class="dlist" id="dlist"></div></aside>
+<script>
+var V=[
+{s:"helio-new-branch.mp4",p:"helio-new-branch-poster.jpg",b:"Heliopolis Coffee",t:"Heliopolis Coffee — new branch reel",m:"Video reel · 5 seconds · new branch campaign edit",f:null},
+{s:"helio-campaign.mp4",p:"helio-campaign-poster.jpg",b:"Heliopolis Coffee",t:"Heliopolis Coffee — campaign film",m:"Video · 27 seconds · edited campaign master",f:null},
+{s:"archpix-ad.mp4",p:"archpix-ad-poster.jpg",b:"Archpix",t:"Archpix — brand ad film",m:"Video · 76 seconds · Arabic subtitles · Facebook & LinkedIn master",f:"contain"}];
+var feed=document.getElementById('feed'),drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim'),pl=document.getElementById('pl');
+var reels=V.map(function(v,i){
+  var r=document.createElement('div');r.className='reel';
+  var vid=document.createElement('video');
+  vid.src=v.s;vid.poster=v.p;vid.muted=true;vid.loop=true;vid.playsInline=true;vid.setAttribute('playsinline','');vid.preload='auto';
+  if(v.f)vid.setAttribute('data-fit',v.f);
+  var g=document.createElement('span');g.className='glyph';g.textContent='\u25B6';
+  var snd=document.createElement('button');snd.className='ctl sound';snd.type='button';snd.textContent='\uD83D\uDD07';snd.setAttribute('aria-label','Unmute');
+  var ex=document.createElement('button');ex.className='ctl expand';ex.type='button';ex.textContent='\u26F6';ex.setAttribute('aria-label','Fullscreen');
+  r.appendChild(vid);r.appendChild(g);r.appendChild(snd);r.appendChild(ex);feed.appendChild(r);
+  function rf(){r.classList.toggle('is-paused',vid.paused);snd.textContent=vid.muted?'\uD83D\uDD07':'\uD83D\uDD0A';snd.setAttribute('aria-label',vid.muted?'Unmute':'Mute');}
+  vid.addEventListener('click',function(){if(vid.paused){delete vid.dataset.up;var p=vid.play();if(p&&p.catch)p.catch(function(){});}else{vid.dataset.up='1';vid.pause();}});
+  vid.addEventListener('play',rf);vid.addEventListener('playing',rf);vid.addEventListener('pause',rf);document.addEventListener('fullscreenchange',rf);
+  snd.addEventListener('click',function(){vid.muted=!vid.muted;if(vid.paused){var p=vid.play();if(p&&p.catch)p.catch(function(){});}rf();});
+  ex.addEventListener('click',function(){
+    if(document.fullscreenElement){document.exitFullscreen();return;}
+    if(r.requestFullscreen){var p=r.requestFullscreen();if(p&&p.catch)p.catch(function(){ if(vid.webkitEnterFullscreen)vid.webkitEnterFullscreen();});}
+    else if(vid.webkitEnterFullscreen){vid.webkitEnterFullscreen();}
+  });
+  rf();
+  return {el:r,vid:vid};
+});
+var items=V.map(function(v,i){
+  var b=document.createElement('button');b.type='button';b.className='ditem';b.setAttribute('aria-current',i===0?'true':'false');
+  var img=document.createElement('img');img.src=v.p;img.alt='';
+  var tx=document.createElement('span');var t=document.createElement('b');t.textContent=v.t;var m=document.createElement('span');m.textContent=v.b+' \u00B7 '+v.m.split('\u00B7')[1].trim();
+  tx.appendChild(t);tx.appendChild(m);b.appendChild(img);b.appendChild(tx);
+  b.addEventListener('click',function(){closeD();reels[i].el.scrollIntoView({behavior:'smooth'});var vid=reels[i].vid;delete vid.dataset.up;var p=vid.play();if(p&&p.catch)p.catch(function(){});});
+  document.getElementById('dlist').appendChild(b);return b;
+});
+function mark(i){items.forEach(function(b,j){b.setAttribute('aria-current',j===i?'true':'false');});}
+var settle=null,lastIdx=0;
+function currentIdx(){
+  var mid=window.innerHeight/2,best=0,bd=1e9;
+  reels.forEach(function(r,i){var b=r.el.getBoundingClientRect();var c=b.top+b.height/2;var d=Math.abs(c-mid);if(d<bd){bd=d;best=i;}});
+  return best;
+}
+feed.addEventListener('scroll',function(){
+  clearTimeout(settle);
+  settle=setTimeout(function(){
+    var i=currentIdx();
+    reels.forEach(function(r,j){
+      if(j===i){mark(j);if(r.vid.paused&&!r.vid.dataset.up){var p=r.vid.play();if(p&&p.catch)p.catch(function(){});}}
+      else if(!r.vid.paused){r.vid.pause();delete r.vid.dataset.up;}
+    });
+  },120);
+},{passive:true});
+function openD(){drawer.classList.add('on');scrim.classList.add('on');pl.setAttribute('aria-expanded','true');}
+function closeD(){drawer.classList.remove('on');scrim.classList.remove('on');pl.setAttribute('aria-expanded','false');}
+pl.addEventListener('click',openD);
+document.getElementById('dclose').addEventListener('click',closeD);
+scrim.addEventListener('click',closeD);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD();});
+var p0=reels[0].vid.play();if(p0&&p0.catch)p0.catch(function(){});
+</script></body></html>
