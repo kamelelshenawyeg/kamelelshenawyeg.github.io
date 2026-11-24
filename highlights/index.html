@@ -21,7 +21,8 @@ body.viewing .bar{display:flex}
 .pill{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:12.5px;line-height:1;padding:.55rem .85rem;border-radius:999px;border:1px solid rgb(245 241 230/.45);background:rgb(20 19 15/.72);color:#f5f1e6;cursor:pointer}
 .pill svg{width:15px;height:15px}
 /* ---------- gallery ---------- */
-#gallery{position:fixed;inset:0;overflow-y:auto;background:#0d0c09;padding-top:calc(var(--headh) + 45px);padding-bottom:var(--barh);columns:2;column-gap:0}
+#gallery{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;background:#0d0c09;padding-top:calc(var(--headh) + 45px);padding-bottom:var(--barh)}
+#gallery .gwrap{columns:2;column-gap:0}
 body.viewing #gallery{display:none}
 .tile{display:block;width:100%;border:0;padding:0;background:#14130f;cursor:pointer;break-inside:avoid;position:relative}
 .tile video,.tile img{display:block;width:100%;height:auto}
@@ -79,11 +80,12 @@ body.viewing #viewer{display:block}
   #gsitenav a{font-size:13.5px;letter-spacing:.04em;color:rgb(245 241 230/.8);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
   #gsitenav a:hover{color:#f5f1e6;border-color:rgb(245 241 230/.5)}
   #brands{top:64px;height:48px;padding:0 28px;justify-content:center}
-  #gallery{padding-top:calc(64px + 50px);padding-bottom:40px;padding-left:28px;padding-right:28px;columns:4;column-gap:12px}
+  #gallery{padding-top:calc(64px + 50px);padding-bottom:40px;padding-left:28px;padding-right:28px}
+  #gallery .gwrap{columns:4;column-gap:12px}
   .tile{margin-bottom:12px;border-radius:8px;overflow:hidden}
 }
 @media (min-width:1700px){
-  #gallery{columns:5}
+  #gallery .gwrap{columns:5}
 }
 </style>
 <script src="p23.js" defer></script></head><body>
@@ -169,6 +171,7 @@ function filtered(){return META.filter(function(v){return !brandFilter||v.b===br
 /* ---------- gallery ---------- */
 function buildGallery(){
   gallery.innerHTML='';
+  var wrap=document.createElement('div');wrap.className='gwrap';gallery.appendChild(wrap);
   filtered().forEach(function(i){
     var v=META[i];
     var b=document.createElement('button');b.type='button';b.className='tile';
@@ -177,7 +180,7 @@ function buildGallery(){
     var n=document.createElement('span');n.className='tn';n.textContent=v.b+' · '+v.d;
     b.appendChild(img);b.appendChild(n);
     b.addEventListener('click',function(){openViewer(i);});
-    gallery.appendChild(b);
+    wrap.appendChild(b);
   });
 }
 /* ---------- viewer ---------- */
