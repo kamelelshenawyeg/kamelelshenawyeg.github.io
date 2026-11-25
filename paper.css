@@ -788,3 +788,7 @@ body{overflow-x:clip}
 .story-metrics span{display:block;font-size:15px;line-height:1.35;max-width:27ch;margin-top:8px}
 @media(max-width:520px){.story-metrics{grid-template-columns:1fr 1fr;gap:22px 16px}.story-metrics strong{font-size:30px}.story-metrics span{font-size:14px}}
 @media(max-width:360px){.story-metrics{grid-template-columns:1fr}.story-hook{font-size:28px}}
+
+.km-cat-head{display:flex;gap:26px;align-items:center;margin-bottom:8px}
+.km-cat{margin-bottom:22px}
+.km-cat[hidden]{display:none}
