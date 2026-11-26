@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#f6f4ef" name="theme-color"/><meta content="Cupz Coffee House: the Damanhour coffee house's identity studied as a system. The bean mark, the lockup, the monochrome palette, the cup in use and the signature line." name="description"/><title>Cupz Coffee House Identity | Kamel Elshenawy</title><link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="paper.css?v=review-26nov" rel="stylesheet"/><script defer="" src="site.js"></script>
+<style>
+.cz{font-family:'Outfit',system-ui,sans-serif;color:#231f20;background:#f6f4ef}
+.cz *{box-sizing:border-box}
+.cz h1,.cz h2,.cz h3{font-family:'Outfit',system-ui,sans-serif}
+.cz-hero{background:#f6f4ef;color:#231f20;padding:clamp(48px,8vw,110px) clamp(20px,6vw,84px) clamp(52px,7vw,100px);position:relative;overflow:hidden}
+.cz-hero .cz-top{display:flex;justify-content:space-between;gap:16px;font-weight:500;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#8d8579;margin-bottom:clamp(34px,5vw,60px)}
+.cz-hero .cz-heroimg{display:block;width:min(52%,380px);height:auto;margin:0}
+.cz-hero .cz-tag{margin:clamp(20px,3vw,30px) 0 0;font-weight:300;font-size:clamp(18px,2.8vw,30px);letter-spacing:.32em;text-transform:uppercase;color:#231f20}
+.cz-hero .cz-meta{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:40px;font-size:13.5px;letter-spacing:.04em;color:#8d8579}
+.cz-hero .cz-meta b{display:block;color:#231f20;font-weight:600;font-size:14.5px;margin-top:2px}
+.cz-band{background:#231f20;color:#f6f4ef;padding:clamp(40px,6vw,84px) clamp(20px,6vw,84px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:center}
+.cz-band h2{font-size:clamp(28px,4.6vw,56px);font-weight:300;line-height:1.15;margin:0 0 16px;letter-spacing:.06em}
+.cz-band p{font-size:clamp(15px,1.6vw,18px);line-height:1.6;margin:0;font-weight:300;max-width:56ch;color:#cfc9bd}
+.cz-band figure{margin:0;display:flex;justify-content:center}
+.cz-band img{width:min(56%,240px);height:auto;display:block;filter:invert(1)}
+.cz-sec{padding:clamp(44px,6vw,96px) clamp(20px,6vw,84px)}
+.cz-sec .cz-label{font-weight:500;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:#8d8579;margin:0 0 14px}
+.cz-sec h2{font-size:clamp(26px,4.2vw,48px);font-weight:300;margin:0 0 18px;letter-spacing:.04em;color:#231f20}
+.cz-sec .cz-lede{max-width:62ch;font-size:16.5px;line-height:1.7;color:#57524a;margin:0 0 34px;font-weight:300}
+.cz-sec.cz-ink{background:#231f20}
+.cz-sec.cz-ink h2{color:#f6f4ef}
+.cz-sec.cz-ink .cz-lede{color:#cfc9bd}
+.cz-construct{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:8px}
+.cz-card{border:1px solid #e4dfd4;border-radius:8px;padding:clamp(20px,3vw,36px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:280px;background:#fffefb}
+.cz-card figcaption{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d8579;font-weight:400}
+.cz-card.cz-dark{background:#231f20;border-color:#231f20}
+.cz-card.cz-dark figcaption{color:#a9a294}
+.cz-card.cz-dark img{filter:invert(1)}
+.cz-card img{max-width:70%;max-height:180px;height:auto;width:auto;display:block}
+.cz-story{border-left:3px solid #231f20;padding:4px 0 4px 16px;color:#57524a;font-size:15.5px;line-height:1.65;max-width:62ch;margin:26px 0 0;font-weight:300}
+.cz-story b{color:#231f20;font-weight:600}
+.cz-story .cz-tagp{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;background:#231f20;color:#f6f4ef;border-radius:999px;padding:4px 12px;margin-bottom:10px}
+.cz-palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:560px}
+.cz-sw{border-radius:8px;min-height:170px;display:flex;align-items:flex-end;padding:14px;position:relative;overflow:hidden;border:1px solid rgba(35,31,32,.14)}
+.cz-sw span{font-weight:500;font-size:13px;letter-spacing:.12em}
+.cz-sw small{position:absolute;top:12px;left:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.cz-use{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center}
+.cz-use figure{margin:0;border-radius:8px;overflow:hidden;border:1px solid #3a3536}
+.cz-use img{display:block;width:100%;height:auto}
+.cz-lock{background:#f6f4ef;border:1.5px solid #231f20;border-radius:8px;padding:clamp(34px,5vw,72px) clamp(20px,4vw,56px);text-align:center}
+.cz-lock .l1{color:#231f20;font-weight:300;font-size:clamp(24px,4.6vw,52px);letter-spacing:.34em;text-transform:uppercase;line-height:1.5}
+.cz-lock p{color:#57524a;font-size:13.5px;letter-spacing:.08em;margin:22px auto 0;font-weight:300;max-width:56ch}
+.cz-notes{background:#fffefb;border:1px solid #e4dfd4;border-radius:8px;padding:clamp(24px,3.4vw,44px);margin-top:8px}
+.cz-notes h3{font-weight:500;font-size:15px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px;color:#231f20}
+.cz-notes ul{margin:0;padding-left:20px;font-size:15px;line-height:1.75;color:#57524a;font-weight:300}
+.cz-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.cz-btn{font-weight:500;font-size:13px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:14px 26px;border:1.5px solid #231f20;color:#231f20}
+.cz-btn.cz-fill{background:#231f20;color:#f6f4ef}
+.cz-btn:hover{opacity:.78}
+@media (max-width:820px){.cz-band,.cz-use{grid-template-columns:1fr}}
+@media (max-width:560px){.cz-hero .cz-top span:last-child{display:none}.cz-hero .cz-top{letter-spacing:.18em}.cz-hero .cz-tag{letter-spacing:.24em}.cz-hero .cz-heroimg{width:min(64%,300px)}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><div class="sheet"><header class="top"><a class="top-l" href="index.html">Portfolio &amp; Case Studies</a><nav aria-label="Site sections" class="top-r"><a href="index.html">Home</a><a aria-current="page" href="portfolio.html">Portfolio</a><a href="case-studies.html">Case Studies</a><a href="about.html">About Me</a><a class="hl-tab" href="highlights/" aria-label="Open Highlights viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg><span>Highlights</span></a></nav></header><main id="main"><a class="km-back" href="portfolio.html">← Portfolio</a>
+<article class="cz">
+<section class="cz-hero">
+<div class="cz-top"><span>Brand identity</span><span>Cupz Coffee House</span><span>Damanhour</span></div>
+<img class="cz-heroimg" src="brand-cupz-lockup-tight.webp" alt="Cupz Coffee House lockup: a round bean mark split by a single curved line, above wide-tracked CUPZ caps and a Coffee House script"/>
+<p class="cz-tag">Sip, relax and enjoy</p>
+<div class="cz-meta">
+<div>Practice<b>Coffee house</b></div>
+<div>Base<b>Damanhour, Egypt</b></div>
+<div>Find it<b>Madreb El-Riz St, Mubarak Complex</b></div>
+<div>Scope<b>Brand identity</b></div>
+</div>
+</section>
+<section class="cz-band">
+<div>
+<h2>One bean, one line</h2>
+<p>A neighborhood coffee house with a strictly monochrome identity: a single disc, a single curved cut, and a name set in wide, unhurried caps. No gradients, no second color, no noise. The whole brand fits on a cup sleeve and never needs more.</p>
+</div>
+<figure><img src="brand-cupz-mark.webp" alt="The Cupz mark reversed: white bean disc on ink"/></figure>
+</section>
+<section class="cz-sec">
+<p class="cz-label">01 · The mark</p>
+<h2>A bean, split by steam</h2>
+<p class="cz-lede">The mark is a near-black disc divided by one S-curve of negative space. Read it two ways at once: a coffee bean seen head-on with its center crease, and a rising wisp of steam curling off a fresh cup. The right edge breaks open, letting the disc double as the letter C.</p>
+<div class="cz-construct">
+<figure class="cz-card"><img src="brand-cupz-mark.webp" alt="The Cupz bean mark in ink on paper"/><figcaption>The mark, ink on paper</figcaption></figure>
+<figure class="cz-card cz-dark"><img src="brand-cupz-mark.webp" alt="The Cupz bean mark reversed in paper white on ink"/><figcaption>Reversed, on ink</figcaption></figure>
+<figure class="cz-card"><img src="brand-cupz-lockup-tight.webp" alt="The Cupz mark sitting above the CUPZ wordmark in the full lockup"/><figcaption>How it sits in the lockup</figcaption></figure>
+</div>
+<div class="cz-story"><span class="cz-tagp">Our reading</span><br/><b>The curve does all the work.</b> One gesture carries the bean, the steam and the initial letter. Because the mark is a single flat color, it survives any surface: a paper cup, a window decal, a social avatar at favicon size. Our reading of the construction, not the designer's own account.</div>
+</section>
+<section class="cz-sec cz-ink">
+<p class="cz-label">02 · The lockup</p>
+<h2>Engineered caps, human script</h2>
+<p class="cz-lede">Under the mark, CUPZ is set in wide-tracked caps with open, rounded letterforms, engineered and calm. Beneath it, "Coffee House" is written in a loose hand script. The pairing is the brand's whole personality: the discipline of a well-run bar, signed by hand.</p>
+<div class="cz-construct">
+<figure class="cz-card"><img src="brand-cupz-lockup-tight.webp" alt="The full Cupz lockup on paper"/><figcaption>The full lockup</figcaption></figure>
+<figure class="cz-card cz-dark"><img src="brand-cupz-lockup-tight.webp" alt="The full Cupz lockup reversed on ink"/><figcaption>Reversed on ink</figcaption></figure>
+</div>
+</section>
+<section class="cz-sec">
+<p class="cz-label">03 · Color</p>
+<h2>Strictly monochrome</h2>
+<p class="cz-lede">The identity publishes in one ink on one paper. Seasonal photography brings whatever color a campaign needs; the brand itself never does. Values sampled from the brand's published artwork.</p>
+<div class="cz-palette">
+<div class="cz-sw" style="background:#231f20;color:#f6f4ef"><small>Ink</small><span>#231f20</span></div>
+<div class="cz-sw" style="background:#fffefb;color:#231f20"><small>Paper</small><span>#fffefb</span></div>
+</div>
+</section>
+<section class="cz-sec cz-ink">
+<p class="cz-label">04 · In use</p>
+<h2>The mark meets the doodle band</h2>
+<div class="cz-use">
+<div>
+<p class="cz-lede" style="margin-bottom:0">On the house cup the identity gains a second voice: a hand-drawn doodle band wrapping the rim, coffee icons and faces in the same single ink, with the bean mark on the cup body. The photograph is from the brand's own page cover, shown as the identity applied, not as campaign work.</p>
+</div>
+<figure><img src="brand-cupz-cup.webp" alt="The Cupz house cup: latte art in a paper cup wrapped by the identity's hand-drawn doodle band, the bean mark on the cup body" loading="lazy" decoding="async"/></figure>
+</div>
+</section>
+<section class="cz-sec">
+<p class="cz-label">05 · The signature line</p>
+<div class="cz-lock">
+<div class="l1">Sip, relax and enjoy</div>
+<p>The brand's own bio line, quoted exactly. Three verbs, no punctuation, no hurry: the whole brief of a neighborhood coffee house in five words.</p>
+</div>
+<div class="cz-notes" style="margin-top:34px">
+<h3>Scope notes</h3>
+<ul>
+<li>Documented on this page: the bean mark, the full lockup, the monochrome palette, the signature line, and the identity applied on the house cup.</li>
+<li>The source for every asset is the brand's own public Facebook page, which the owner named as the identity source: the profile picture served by Facebook at 1080px, the page bio line, and the page cover photograph showing the cup.</li>
+<li>Cupz is documented as a branding project only. No social media work window exists for this brand, so no social posts are shown.</li>
+<li>No vector files or brand guidelines exist in the documented material; the construction reading of the mark is our study of the published artwork, not the designer's own account.</li>
+<li>Colors are sampled pixel values; Ink and Paper are descriptive names, not official brand names.</li>
+<li>The reversed cards are the same published artwork inverted for legibility on dark, not a second brand file.</li>
+<li>The cup photograph is a detail of the brand's page cover, used as evidence of the identity in use; the cover artwork's authorship is not documented.</li>
+</ul>
+<div class="cz-cta"><a class="cz-btn cz-fill" href="case-studies.html">Case studies</a><a class="cz-btn" href="portfolio.html">Back to portfolio</a></div>
+</div>
+</section>
+</article>
+</main><a class="hl-fab" href="highlights/" aria-label="Open Highlights viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg></a><div class="colophon"><span>Kamel Elshenawy</span><span>Portfolio &amp; Case Studies</span><span>Vol. I</span></div></div></body></html>
