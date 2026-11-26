@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#101010" name="theme-color"/><meta content="Peak Marketing: the agency's own visual identity system. Mark, color, type, stationery and the system in use." name="description"/><title>Peak Marketing Identity | Kamel Elshenawy</title><link href="favicon.svg" rel="icon" type="image/svg+xml"/><link as="font" crossorigin="" href="fonts/Outfit-var.woff2" rel="preload" type="font/woff2"/><link href="paper.css?v=review-26nov" rel="stylesheet"/><script defer="" src="site.js"></script>
+<style>
+@font-face{font-family:'Outfit';src:url('fonts/Outfit-var.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('fonts/DMSans-var.woff2') format('woff2');font-weight:400 1000;font-style:normal;font-display:swap}
+.bp{font-family:'DM Sans',system-ui,sans-serif;color:#f5f2ee;background:#101010}
+.bp *{box-sizing:border-box}
+.bp h1,.bp h2,.bp h3,.bp .bp-disp{font-family:'Outfit','DM Sans',system-ui,sans-serif}
+.bp-hero{background:#101010;color:#f5f2ee;padding:clamp(48px,8vw,110px) clamp(20px,6vw,84px) clamp(56px,8vw,120px);position:relative;overflow:hidden}
+.bp-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 300px at 100% 0%,rgba(128,48,32,.5),transparent 70%),radial-gradient(380px 280px at 0% 100%,rgba(128,48,32,.35),transparent 70%);pointer-events:none}
+.bp-hero .bp-top{display:flex;justify-content:space-between;gap:16px;font-family:'Outfit';font-weight:500;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8f8880;margin-bottom:clamp(36px,5vw,64px);position:relative}
+.bp-hero h1{font-size:clamp(64px,13vw,170px);line-height:.9;margin:0;font-weight:900;letter-spacing:.02em;text-transform:uppercase;position:relative}
+.bp-hero h1 span{display:block;font-weight:600;font-size:clamp(17px,2.6vw,30px);letter-spacing:.46em;margin-top:18px;color:#c9c2ba;text-transform:uppercase}
+.bp-hero .bp-meta{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:42px;font-size:13.5px;letter-spacing:.04em;color:#8f8880;position:relative}
+.bp-hero .bp-meta b{display:block;color:#f5f2ee;font-weight:700;font-size:14.5px;margin-top:2px}
+.bp-hero .bp-mark{position:absolute;right:clamp(-30px,-1vw,-6px);bottom:clamp(20px,4vw,60px);width:clamp(150px,20vw,300px);opacity:.14;pointer-events:none}
+.bp-band{background:#f83000;color:#101010;padding:clamp(40px,6vw,84px) clamp(20px,6vw,84px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:center}
+.bp-band h2{font-family:'Outfit';font-size:clamp(34px,5.6vw,68px);font-weight:900;line-height:1;margin:0 0 14px;text-transform:uppercase;letter-spacing:.01em}
+.bp-band p{font-size:clamp(15px,1.6vw,18px);line-height:1.55;margin:0;font-weight:500;max-width:56ch}
+.bp-band figure{margin:0;background:#101010;border-radius:14px;padding:10px;box-shadow:0 24px 60px rgba(16,16,16,.35)}
+.bp-band img{display:block;width:100%;height:auto;border-radius:8px}
+.bp-sec{padding:clamp(44px,6vw,96px) clamp(20px,6vw,84px)}
+.bp-sec .bp-label{font-family:'Outfit';font-weight:500;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#f83000;margin:0 0 14px}
+.bp-sec h2{font-size:clamp(30px,4.6vw,54px);font-weight:800;margin:0 0 18px;letter-spacing:.01em;color:#f5f2ee}
+.bp-sec .bp-lede{max-width:62ch;font-size:16.5px;line-height:1.65;color:#b7b0a8;margin:0 0 34px}
+.bp-story{border-left:3px solid #f83000;padding:4px 0 4px 16px;color:#b7b0a8;font-size:15.5px;line-height:1.6;max-width:62ch;margin:26px 0 0}
+.bp-story b{color:#f5f2ee}
+.bp-story .bp-tag{display:inline-block;font-family:'Outfit';font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:#2a1410;color:#f83000;border-radius:999px;padding:4px 12px;margin-bottom:10px}
+.bp-construct{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:8px}
+.bp-card{border:1px solid #2a2724;border-radius:14px;padding:clamp(20px,3vw,36px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:280px;background:#181715}
+.bp-card figcaption{font-family:'Outfit';font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8f8880;font-weight:500}
+.bp-card.bp-light{background:#f5f2ee;border-color:#f5f2ee}
+.bp-card.bp-light figcaption{color:#5a544d}
+.bp-card.bp-signal{background:#f83000;border-color:#f83000}
+.bp-card.bp-signal figcaption{color:#101010}
+.bp-card img{max-width:64%;max-height:170px;height:auto;width:auto;display:block}
+.bp-grid-wrap{position:relative}
+.bp-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(245,242,238,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(245,242,238,.07) 1px,transparent 1px);background-size:28px 28px;border-radius:14px;pointer-events:none}
+.bp-palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.bp-sw{border-radius:12px;min-height:170px;display:flex;align-items:flex-end;padding:14px;position:relative;overflow:hidden}
+.bp-sw span{font-family:'Outfit';font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:lowercase}
+.bp-sw small{position:absolute;top:12px;left:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+.bp-type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.bp-type-card{border:1px solid #2a2724;border-radius:14px;padding:clamp(24px,3vw,40px);background:#181715;display:flex;flex-direction:column;gap:14px}
+.bp-type-card h3{margin:0;font-family:'Outfit';font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:#f83000;font-weight:500}
+.bp-type-card p{margin:0;font-size:14px;line-height:1.6;color:#b7b0a8}
+.bp-type-card img{max-width:100%;height:auto;display:block;border-radius:8px}
+.bp-stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.bp-stat figure{margin:0;border:1px solid #2a2724;border-radius:14px;overflow:hidden;background:#181715}
+.bp-stat img{display:block;width:100%;height:auto}
+.bp-stat figcaption{padding:12px 16px;font-size:13px;color:#b7b0a8;border-top:1px solid #2a2724}
+.bp-notes{background:#181715;border:1px solid #2a2724;border-radius:16px;padding:clamp(24px,3.4vw,44px);margin-top:8px}
+.bp-notes h3{font-family:'Outfit';font-weight:700;font-size:16px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;color:#f5f2ee}
+.bp-notes ul{margin:0;padding-left:20px;font-size:15px;line-height:1.7;color:#b7b0a8}
+.bp-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.bp-btn{font-family:'Outfit';font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:14px 26px;border:1.5px solid #f5f2ee;color:#f5f2ee}
+.bp-btn.bp-fill{background:#f83000;border-color:#f83000;color:#101010}
+.bp-btn:hover{opacity:.82}
+@media (max-width:820px){.bp-band{grid-template-columns:1fr}.bp-hero .bp-mark{display:none}}
+@media (max-width:560px){.bp-hero .bp-top span:last-child{display:none}.bp-hero .bp-top{letter-spacing:.18em}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><div class="sheet"><header class="top"><a class="top-l" href="index.html">Portfolio &amp; Case Studies</a><nav aria-label="Site sections" class="top-r"><a href="index.html">Home</a><a aria-current="page" href="portfolio.html">Portfolio</a><a href="case-studies.html">Case Studies</a><a href="about.html">About Me</a><a class="hl-tab" href="highlights/" aria-label="Open Highlights viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg><span>Highlights</span></a></nav></header><main id="main"><a class="km-back" href="portfolio.html">← Portfolio</a>
+<article class="bp">
+<section class="bp-hero">
+<div class="bp-top"><span>Brand identity</span><span>@peak.marketing.company</span><span>2025</span></div>
+<img class="bp-mark" src="brand-peak-mark.webp" alt="" aria-hidden="true"/>
+<h1>Peak<span>Marketing agency</span></h1>
+<div class="bp-meta">
+<div>Sector<b>Marketing &amp; advertising</b></div>
+<div>Base<b>Egypt</b></div>
+<div>Values<b>Fusion · Dynamic · Honor</b></div>
+<div>Scope<b>The agency's own identity</b></div>
+</div>
+</section>
+<section class="bp-band">
+<div>
+<h2>Numbers talk!</h2>
+<p>The agency's published brand line is "It's Always Matter of Numbers." Every layout in the system starts from that promise: dark stages, white evidence type, and one signal color that points at the result.</p>
+</div>
+<figure><img src="brand-peak-post-1.webp" alt="Peak Marketing launch post: NUMBERS TALK in a signal-orange bar over a dark office scene, with the Peak mark" loading="lazy" decoding="async"/></figure>
+</section>
+<section class="bp-sec">
+<p class="bp-label">01 · The mark</p>
+<h2>B for Peak</h2>
+<p class="bp-lede">One monogram carries the whole system: it closes every post, signs every template, and scales from a profile avatar to an oversized outline graphic.</p>
+<div class="bp-construct">
+<figure class="bp-card bp-grid-wrap"><div class="bp-grid-lines"></div><img src="brand-peak-mark.webp" alt="Peak Marketing mark: a geometric monogram of two interlocking angular shapes forming the letter B"/><figcaption>Mark construction</figcaption></figure>
+<figure class="bp-card"><img src="brand-peak-mark.webp" alt="White Peak mark on the brand's ink black"/><figcaption>Primary, on ink</figcaption></figure>
+<figure class="bp-card bp-light"><img src="brand-peak-mark-ink.webp" alt="Ink Peak mark on white"/><figcaption>Reversed, on white</figcaption></figure>
+</div>
+<div class="bp-story"><span class="bp-tag">The brand's own story</span><br/><b>A letter B drawn as two upward arrows.</b> The monogram is the letter B built from two arrows pointing up, the agency's shorthand for growth, and it reads as "B for Peak". This is the identity owner's own account of the design, not our interpretation.</div>
+</section>
+<section class="bp-sec" style="background:#0c0c0c">
+<p class="bp-label">02 · Color</p>
+<h2>Ink, white, one signal</h2>
+<p class="bp-lede">The system runs on near-black stages and white type, cut by a single hot signal color. The deeper ember tone appears only as ambient glow at the edges of layouts. Values sampled from the brand's published artwork.</p>
+<div class="bp-palette">
+<div class="bp-sw" style="background:#101010;border:1px solid #2a2724;color:#f5f2ee"><small>Ink</small><span>#101010</span></div>
+<div class="bp-sw" style="background:#202020;color:#f5f2ee"><small>Panel</small><span>#202020</span></div>
+<div class="bp-sw" style="background:#f83000;color:#101010"><small>Signal</small><span>#f83000</span></div>
+<div class="bp-sw" style="background:#803020;color:#f5f2ee"><small>Ember</small><span>#803020</span></div>
+<div class="bp-sw" style="background:#ffffff;color:#101010"><small>Paper</small><span>#ffffff</span></div>
+</div>
+</section>
+<section class="bp-sec">
+<p class="bp-label">03 · Typography</p>
+<h2>Loud evidence, quiet captions</h2>
+<p class="bp-lede">Headlines are set in a heavy geometric sans, uppercase and tight; supporting text drops to a light neo-grotesque with generous spacing. No editable type specimens exist in the documented material, so the letterforms are shown inside the brand's own published artwork rather than named or redrawn.</p>
+<div class="bp-type-grid">
+<div class="bp-type-card"><h3>Display · heavy geometric</h3><img src="brand-peak-type-2.webp" alt="Detail: CASE STUDY headline set in the brand's heavy geometric sans" loading="lazy" decoding="async"/><p>Uppercase, tight tracking, maximum weight: headlines carry the evidence. Shown in the brand's artwork; this is our reading of the style, not a font identification.</p></div>
+<div class="bp-type-card"><h3>Statement · boxed sans</h3><img src="brand-peak-type-1.webp" alt="Detail: NUMBERS TALK set in light caps inside the brand's signal bar" loading="lazy" decoding="async"/><p>Brand statements set in wide-tracked light caps, often locked inside a signal-color bar with endpoint markers.</p></div>
+</div>
+</section>
+<section class="bp-sec" style="background:#0c0c0c">
+<p class="bp-label">04 · Stationery</p>
+<h2>Carried by the team</h2>
+<p class="bp-lede">Business card and letterhead fronts, designed for this study in the brand's own system: ink ground, white evidence type, signal accents, the mark as signature. Per the agency's instruction, the stationery carries Kamel Elshenawy's name as a Peak employee.</p>
+<div class="bp-construct">
+<figure class="bp-card" style="padding:0;overflow:hidden"><svg viewBox="0 0 340 210" width="100%" role="img" aria-label="Peak business card front: mark, Kamel Elshenawy, Peak Marketing, contact details"><rect width="340" height="210" fill="#101010"/><circle cx="340" cy="0" r="90" fill="#803020" opacity=".35"/><image href="brand-peak-mark.webp" x="24" y="24" width="34" height="34"/><text x="24" y="120" fill="#f5f2ee" font-family="Outfit, sans-serif" font-weight="800" font-size="21" letter-spacing="1">KAMEL ELSHENAWY</text><text x="24" y="142" fill="#f83000" font-family="Outfit, sans-serif" font-weight="600" font-size="10.5" letter-spacing="3.4">PEAK MARKETING</text><text x="24" y="178" fill="#8f8880" font-family="DM Sans, sans-serif" font-size="10">peakkamel@gmail.com</text><text x="24" y="193" fill="#8f8880" font-family="DM Sans, sans-serif" font-size="10">+20 111 182 7799</text><rect x="286" y="176" width="30" height="4" fill="#f83000"/></svg><figcaption>Business card, front</figcaption></figure>
+<figure class="bp-card bp-light" style="padding:0;overflow:hidden"><svg viewBox="0 0 340 210" width="100%" role="img" aria-label="Peak letterhead front: ink band with mark, Kamel Elshenawy, letter body area"><rect width="340" height="210" fill="#f5f2ee"/><rect width="340" height="52" fill="#101010"/><image href="brand-peak-mark.webp" x="16" y="11" width="30" height="30"/><text x="58" y="33" fill="#f5f2ee" font-family="Outfit, sans-serif" font-weight="800" font-size="15" letter-spacing="2.5">PEAK</text><text x="340" y="33" fill="#f83000" font-family="Outfit, sans-serif" font-weight="600" font-size="8.5" letter-spacing="2.6" text-anchor="end" transform="translate(-16 0)">MARKETING AGENCY</text><text x="24" y="88" fill="#101010" font-family="Outfit, sans-serif" font-weight="800" font-size="13" letter-spacing="1">KAMEL ELSHENAWY</text><text x="24" y="104" fill="#803020" font-family="Outfit, sans-serif" font-weight="600" font-size="8.5" letter-spacing="2.8">PEAK MARKETING</text><rect x="24" y="122" width="292" height="1.5" fill="#101010" opacity=".2"/><rect x="24" y="138" width="220" height="6" fill="#101010" opacity=".12"/><rect x="24" y="152" width="252" height="6" fill="#101010" opacity=".12"/><rect x="24" y="166" width="180" height="6" fill="#101010" opacity=".12"/><rect x="24" y="192" width="60" height="4" fill="#f83000"/></svg><figcaption>Letterhead, front</figcaption></figure>
+</div>
+<div class="bp-story"><span class="bp-tag">Our reading</span><br/><b>Flat artwork, not a photo mockup.</b> These are new designs drawn in the brand's system for this page. They are not scans of printed agency stationery, and no photoreal render is faked.</div>
+</section>
+<section class="bp-sec">
+<p class="bp-label">05 · In use</p>
+<h2>The template machine</h2>
+<p class="bp-lede">The identity runs as a publishing system: a category kicker, the agency handle and year up top, evidence in the middle, the mark closing every frame, and the monogram reused as an oversized outline graphic. Posts from the agency's own feed.</p>
+<div class="bp-stat">
+<figure><img src="brand-peak-post-2.webp" alt="Peak values post listing Fusion, Dynamic and Honor with signal-orange plus markers" loading="lazy" decoding="async"/><figcaption>Values series: Fusion, Dynamic, Honor</figcaption></figure>
+<figure><img src="brand-peak-post-3.webp" alt="Peak SEO highlights post for a client inside a browser-frame graphic with keyword chips" loading="lazy" decoding="async"/><figcaption>Client SEO highlights template</figcaption></figure>
+<figure><img src="brand-peak-post-4.webp" alt="Peak case study post template for Archpix with client photo card" loading="lazy" decoding="async"/><figcaption>Case study template, Archpix</figcaption></figure>
+</div>
+<div class="bp-notes">
+<h3>Scope notes</h3>
+<ul>
+<li>Documented on this page: the monogram and its usage, the working palette, the letterforms inside published artwork, new stationery designs in the brand's system, and the social template family.</li>
+<li>Colors are sampled pixel values from the agency's published posts; names like Signal and Ember are descriptive, not official brand names.</li>
+<li>The monogram artwork is cleaned from the agency's own published posts; no original vector file exists in the documented material, so the artwork is presented at sizes where it stays crisp.</li>
+<li>The stationery designs are new flat artwork created for this page in the brand's style, carrying Kamel Elshenawy's name as a Peak employee per the agency's instruction; they are not presented as existing printed pieces.</li>
+<li>The brand line "It's Always Matter of Numbers." is quoted exactly as the agency publishes it.</li>
+</ul>
+<div class="bp-cta"><a class="bp-btn bp-fill" href="case-studies.html">Case studies</a><a class="bp-btn" href="portfolio.html">Back to portfolio</a></div>
+</div>
+</section>
+</article>
+</main><a class="hl-fab" href="highlights/" aria-label="Open Highlights viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg></a><div class="colophon"><span>Kamel Elshenawy</span><span>Portfolio &amp; Case Studies</span><span>Vol. I</span></div></div></body></html>
