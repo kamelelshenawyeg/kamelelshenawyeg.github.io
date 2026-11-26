@@ -811,3 +811,17 @@ body.viewer-open .hl-fab{visibility:hidden}
 .hl-fab.is-away{opacity:0;transform:translateY(12px);pointer-events:none}
 }
 @media(prefers-reduced-motion:reduce){.hl-fab{transition:none}}
+
+/* Social media grids and advertising films */
+.km-soc{margin-top:28px;border-top:1px solid rgba(211,203,188,.18);padding-top:16px}
+.km-soc-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:12px}
+.km-soc-name{font-family:var(--d);font-weight:700;font-size:19px;line-height:1.2;color:var(--paper)}
+.km-soc-win{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;white-space:nowrap}
+.km-soc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.km-soc-grid .km-photo img{aspect-ratio:9/16;object-fit:cover;max-height:none;height:100%}
+.km-adv-grid .km-photo img{aspect-ratio:3/4;object-fit:cover}
+.km-vid{position:relative}
+.km-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.km-play>span{width:54px;height:54px;border-radius:50%;background:rgba(211,203,188,.92);display:flex;align-items:center;justify-content:center}
+.km-adv-note{font-size:14px;line-height:1.55;opacity:.75;margin:12px 0 0;max-width:640px}
+@media(max-width:640px){.km-soc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
