@@ -818,7 +818,7 @@ body.viewer-open .hl-fab{visibility:hidden}
 .km-soc-name{font-family:var(--d);font-weight:700;font-size:19px;line-height:1.2;color:var(--paper)}
 .km-soc-win{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;white-space:nowrap}
 .km-soc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.km-soc-grid .km-photo img{aspect-ratio:9/16;object-fit:cover;max-height:none;height:100%}
+.km-soc-grid .km-photo img{aspect-ratio:4/5;object-fit:cover;max-height:none;height:100%}
 .km-adv-grid .km-photo img{aspect-ratio:3/4;object-fit:cover}
 .km-vid{position:relative}
 .km-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
