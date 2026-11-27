@@ -5,11 +5,11 @@
 <svg aria-hidden="true" class="bd-knots"><g class="knots"></g></svg>
 <div class="bd-in">
 <div class="bd-top">
-<article class="bd-sheet" data-pin="">
+<article class="bd-sheet" data-pin=""><svg aria-hidden="true" class="mk-lines"></svg>
 <p class="bd-k">How these six were built</p>
 <h2 class="bd-h" id="board-h">Six engagements, one order of work</h2>
 <p class="bd-p">A water consultancy that grew from one office to four. A Dubai design-and-build firm paying for attention it could not convert. A coffee brand launching a new breakfast. A garlic range customers could not tell apart. A factory making the case for local manufacturing. A tableware shop selling on discount.</p>
-<p class="bd-p">The order of the work did not change. <span class="mk">Fix what the offer says before buying more attention</span><a aria-label="Evidence note 1" class="bd-ref" href="#n1">1</a>, then <span class="mk-c">count what actually moved<svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 100 34"><path d="M96.8 10.6C98.8 22.4 75 32.8 49 33 23 33.2 3 27 2.2 16.6 1.4 6.2 25 1.1 51 1.3c25.6.2 43.8 3.6 45.6 9.4"></path><path d="M96.2 11.2c.8 2.4-3.2 4.8-8.4 6.2"></path></svg></span><a aria-label="Evidence note 2" class="bd-ref" href="#n2">2</a>: revenue, inquiries, purchases, capacity.</p>
+<p class="bd-p">The order of the work did not change. <span class="mk">Fix what the offer says before buying more attention</span><a aria-label="Evidence note 1" class="bd-ref" href="#n1">1</a>, then <span class="mk-c">count what actually moved</span><a aria-label="Evidence note 2" class="bd-ref" href="#n2">2</a>: revenue, inquiries, purchases, capacity.</p>
 <p class="bd-foot">Every figure on this page is dated on the case page it comes from.<a aria-label="Evidence note 3" class="bd-ref" href="#n3">3</a></p>
 </article>
 <div class="bd-notes">
@@ -81,4 +81,56 @@
   [].forEach.call(board.querySelectorAll('img'),function(im){if(!im.complete)im.addEventListener('load',later);});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(later);
 })();
-</script></body></html>
+</script><script>
+(function(){
+  var sheet=document.querySelector('.bd-sheet');if(!sheet)return;
+  var svg=sheet.querySelector('.mk-lines');if(!svg)return;
+  var marks=[].slice.call(sheet.querySelectorAll('.mk, .mk-c'));
+  if(!marks.length)return;
+  function oval(cx,cy,rx,ry){
+    var n=3.2,steps=56,d='',i,t,ct,st,x,y,wob;
+    for(i=0;i<=steps;i++){
+      t=i/steps*Math.PI*2;
+      ct=Math.cos(t);st=Math.sin(t);
+      wob=1+0.012*Math.sin(3*t+0.7)+0.008*Math.sin(5*t+2.1);
+      x=cx+rx*wob*Math.sign(ct)*Math.pow(Math.abs(ct),2/n);
+      y=cy+ry*wob*Math.sign(st)*Math.pow(Math.abs(st),2/n);
+      d+=(i?' L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+    }
+    return d+' Z';
+  }
+  function line(x0,x1,y){
+    var w=x1-x0;
+    return 'M'+x0.toFixed(1)+' '+y.toFixed(1)+
+      ' C'+(x0+w*0.28).toFixed(1)+' '+(y-1.1).toFixed(1)+' '+(x0+w*0.62).toFixed(1)+' '+(y+1.2).toFixed(1)+' '+x1.toFixed(1)+' '+(y-0.5).toFixed(1);
+  }
+  function draw(){
+    var rot=sheet.style.transform;
+    sheet.style.transform='none';
+    var sr=sheet.getBoundingClientRect();
+    var d='';
+    marks.forEach(function(sp){
+      var rng=document.createRange();rng.selectNodeContents(sp);
+      var rects=[].slice.call(rng.getClientRects()).filter(function(r){return r.width>2;});
+      if(!rects.length)return;
+      if(sp.classList.contains('mk-c')){
+        var r=rects[0];
+        var x0=r.left-sr.left-9,x1=r.right-sr.left+9,y0=r.top-sr.top-5,y1=r.bottom-sr.top+5;
+        d+=oval((x0+x1)/2,(y0+y1)/2,(x1-x0)/2,(y1-y0)/2);
+      }else{
+        rects.forEach(function(r){d+=line(r.left-sr.left-1,r.right-sr.left+1,r.bottom-sr.top+2.5);});
+      }
+    });
+    sheet.style.transform=rot||'';
+    svg.setAttribute('viewBox','0 0 '+Math.round(sr.width)+' '+Math.round(sr.height));
+    svg.innerHTML='<path d="'+d+'"></path>';
+  }
+  var t;function later(){clearTimeout(t);t=setTimeout(draw,60);}
+  draw();
+  window.addEventListener('resize',later);
+  if(window.ResizeObserver){new ResizeObserver(later).observe(sheet);}
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(later);
+  window.addEventListener('load',draw);
+})();
+</script>
+</body></html>
