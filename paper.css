@@ -846,7 +846,7 @@ body.viewer-open .hl-fab{visibility:hidden}
 .mk{background-image:linear-gradient(transparent 60%,rgba(179,68,31,.13) 60%,rgba(179,68,31,.13) 93%,transparent 93%);background-repeat:no-repeat;background-size:100% 100%}
 .mk-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:2}
 .mk-lines path{fill:none;stroke:#b3441f;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.mk-c{position:relative;display:inline-block;white-space:nowrap;margin:0 6px 0 8px}
+.mk-c{position:relative;display:inline-block;white-space:nowrap;margin:0 2px 0 7px}
 .mk-c path{fill:none;stroke:#b3441f;stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-linecap:round;opacity:.95}
 .bd-ref{font-family:var(--d);font-weight:900;font-size:.58em;color:#8c3314;text-decoration:none;vertical-align:super;margin-left:2px;padding:0 1px}
 .bd-ref:hover,.bd-ref:focus-visible{text-decoration:underline}
