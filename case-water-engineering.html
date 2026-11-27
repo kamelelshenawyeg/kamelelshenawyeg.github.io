@@ -134,8 +134,8 @@
       if(src&&tag)svg.appendChild(P(thread(R(src),R(tag),i*1.7+0.6),'pen-thread'));
     }
     [].forEach.call(wrap.querySelectorAll('.pen-c,.mk-c'),function(sp,k){
-      var b=R(sp),pad=sp.classList.contains('mk-c')?4:3.5;
-      svg.appendChild(P(oval((b.l+b.r)/2,(b.t+b.b)/2,(b.r-b.l)/2+pad,(b.b-b.t)/2+pad*0.85,k*1.4+0.9),sp.classList.contains('pen-light')?'pen-light':''));
+      var b=R(sp),isO=sp.classList.contains('mk-c');
+      svg.appendChild(P(oval((b.l+b.r)/2,(b.t+b.b)/2,(b.r-b.l)/2+(isO?4:3.5),(b.b-b.t)/2+(isO?5:3),k*1.4+0.9),sp.classList.contains('pen-light')?'pen-light':''));
     });
     var w0=wrap.getBoundingClientRect();
     [].forEach.call(wrap.querySelectorAll('.pen-u'),function(sp,k){
